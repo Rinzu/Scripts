@@ -15,8 +15,8 @@ payload={}
 
 with requests.Session() as s:
     while True:
-        usr = "stredel@live.com"#input("Email: ")
-        pswrd = 'n73373279N!n73373279N!'#getpass.getpass()
+        usr = input("Email: ")
+        pswrd = getpass.getpass()
         response = s.get(loginPage)
         soup = bs4.BeautifulSoup(response.text, 'lxml')
         data = soup.select('form input')
